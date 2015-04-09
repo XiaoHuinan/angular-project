@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Hello Sea.js</title>
+</head>
+<body>
+<div id="container"></div>
+
+<script src="js/sea.js" data-main="js/test.js"></script>
+<!--data-main入口在seajs 2.1以上版本已经失效-->
+<script>
+/*
+    1.  SeaJS首先下载入口seajs.use()的模块 test.js，
+    2.  顺着入口模块使用正则表达式匹配代码中所有的require
+    3.  再根据require中的文件路径标识下载相应的js文件
+    4.  对下载来的js文件再迭代进行类似操作
+    5.  整个过程类似图的遍历操作
+    6.  因为可能存在交叉循环依赖所以整个依赖数据结构是一个图而不是树
+    7.  SeaJS会在html页面打开时通过静态分析一次性记载所有需要的js文件
+    8.  如果想要某个js文件在用到时才下载，可以使用require.async
+*/
+seajs.config({
+  base : './',            //定义所有模块的根路径
+  alias: {                //直接定义模块的路径 如果配置jquery 需要再jquery.js底部配置jquery路径
+    //"jquery-debug": "jquery/jquery/1.10.1/jquery.js"
+  },
+  charset: "utf-8",       //下载js时script标签的charset属性
+  timeout: "2000",        //下载文件最大的时长限制，毫秒为单位
+  debug : "false"         //表示是否开启调试模式
+})
+seajs.use('js/test')
+</script>
+</body>
+</html>
