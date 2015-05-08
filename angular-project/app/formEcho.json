@@ -1,5 +1,5 @@
 [
-  {"href":"detail","title":"2015/05/12 9:00<br/>巴黎婚纱拍照","stateClass":"row active","stateText":"已完成"},
+  {"href":"detail({id:1})","title":"2015/05/12 9:00<br/>巴黎婚纱拍照","stateClass":"row active","stateText":"已完成"},
   {"href":"detail","title":"2015/05/12 9:00<br/>巴黎婚纱拍照","stateClass":"row","stateText":"已完成"},
   {"href":"detail","title":"2015/05/12 9:00<br/>巴黎婚纱拍照","stateClass":"row not","stateText":"已完成"},
   {"href":"detail","title":"2015/05/12 9:00<br/>巴黎婚纱拍照","stateClass":"row active","stateText":"已完成"},

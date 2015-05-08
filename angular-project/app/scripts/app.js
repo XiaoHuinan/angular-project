@@ -23,7 +23,7 @@ ngApp.config(function($stateProvider,$urlRouterProvider){
           }
       })
       .state('detail',{
-        url : '/detail',
+        url : '/{id}',
         views : {
           '' : {
             templateUrl : 'views/detail.html',
