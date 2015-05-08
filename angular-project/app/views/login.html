@@ -1,0 +1,32 @@
+<div>
+    <form id="form" ng-submit="formSubmit()">
+      <!--用户信息-->
+      <div class="row user"><input type="text" class="user-input" name="user" placeholder="请输入姓名" ng-model="vm.user.newName" /></div>
+      <div class="row phone"><input type="tel" class="phone-input" name="phone" placeholder="请输入手机号" ng-model="vm.user.newTel" /></div>
+      <div class="row code"><input type="text" class="code-input" name="code" placeholder="验证码" ng-model="vm.user.newCode" /><button type="button" id="loadCode">获取验证码</button></div>
+      <!--验证提示层-->
+      <div class="row pop-layer">请输入正确的手机号</div>
+      <!--提交提示层-->
+      <div class="row layer" id="layer"></div>
+      <button type="submit">提&nbsp;交</button>
+    </form>
+    <div class="copyright">&copy;&nbsp;2001-2015&nbsp;某某版权所有</div>
+</div>
+<script>
+  //初始化短信发送时间  默认时间取自配置。<php> echo C('sms_authcode_time');</php>
+  //此处30为测试
+  var t=30;
+  var time=t;
+  //获取默认验证码
+  $("#loadCode").click(function(){
+    $("#layer").hide()
+    if(time==30){
+      var _val = $("input[name='phone']").val();
+      if(/^1[3458]\d{9}$/.test(_val)) $('.pop-layer').hide();
+      codeAjax(_val,"getCode.json",$(this),time,t);
+    }else{
+      alert(time+"秒后可以重发")
+      return false;
+    }
+  })
+</script>

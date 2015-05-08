@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html ng-app="ngApp">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'/>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="format-detection" content="telephone=no" />
+  <title>微日程</title>
+  <!-- 重构：lszh | 创建：2015-04-15  -->
+  <link rel="stylesheet" type="text/css" href="styles/base.css" />
+</head>
+<body>
+<div class="bg"></div>
+<div class="content" ui-view></div>
+
+<script src="bower_components/modernizr/modernizr.js"></script>
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/ui-router/release/angular-ui-router.js"></script>
+<script src="bower_components/angular-animate/angular-animate.js"></script>
+<!--directive-->
+<!--router-->
+<script src="scripts/app.js"></script>
+<script src="scripts/directives/listDirective.js"></script>
+<script src="scripts/controllers/loginCtrl.js"></script>
+<!--上传头像-->
+<script src="scripts/components/uploadImg.js"></script>
+<script src="scripts/components/jquery.codeajax.js"></script>
+<script src="scripts/components/iscroll.js"></script>
+</body>
+</html>
