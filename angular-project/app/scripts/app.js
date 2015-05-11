@@ -23,20 +23,10 @@ ngApp.config(function($stateProvider,$urlRouterProvider){
           }
       })
       .state('detail',{
-        url : '/{id}',
+        url : '/detail{id}',
         views : {
           '' : {
-            templateUrl : 'views/detail.html',
-            controller : function($scope,$http){
-                $http({
-                  method : 'GET',
-                  url : 'formEcho.json'
-                }).success(function(data){
-                  console.log(data)
-                }).error(function(error){
-                  console.log(error)
-                })
-            }
+            templateUrl : 'views/detail.html'
           }
         }
       })
@@ -49,3 +39,13 @@ ngApp.config(function($stateProvider,$urlRouterProvider){
         }
       })
 })
+//function($scope,$http){
+//  $http({
+//    method : 'GET',
+//    url : 'formEcho.json'
+//  }).success(function(data){
+//    console.log(data)
+//  }).error(function(error){
+//    console.log(error)
+//  })
+//}

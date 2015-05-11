@@ -29,7 +29,7 @@ ngApp.controller('login',function($scope,$http){
 
     $http({
       method: "GET",
-      url : "formEcho.json",
+      url : "json/listEach.json",
       dataType : "json"
     }).success(function(result){
       window.location.href= "/#/list"

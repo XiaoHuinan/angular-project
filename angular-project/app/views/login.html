@@ -23,7 +23,7 @@
     if(time==30){
       var _val = $("input[name='phone']").val();
       if(/^1[3458]\d{9}$/.test(_val)) $('.pop-layer').hide();
-      codeAjax(_val,"getCode.json",$(this),time,t);
+      codeAjax(_val,"json/getCode.json",$(this),time,t);
     }else{
       alert(time+"秒后可以重发")
       return false;
